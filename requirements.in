@@ -1,0 +1,10 @@
+numpy
+tqdm
+datasets
+pyarrow
+transformers
+accelerate
+sentence-transformers
+torch
+sentencepiece
+protobuf

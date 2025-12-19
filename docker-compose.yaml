@@ -1,0 +1,17 @@
+services:
+  scorer:
+    build: .
+    image: score-parquet:cuda
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      HF_HOME: /workspace/.cache/huggingface
+      HF_DATASETS_CACHE: /workspace/.cache/huggingface/datasets
+      HUGGINGFACE_HUB_CACHE: /workspace/.cache/huggingface/hub
+      TRANSFORMERS_CACHE: /workspace/.cache/huggingface/transformers
+      TORCH_HOME: /workspace/.cache/torch
+      UV_CACHE_DIR: /workspace/.cache/uv
+      TOKENIZERS_PARALLELISM: "true"
+    shm_size: "8gb"
+    gpus: all

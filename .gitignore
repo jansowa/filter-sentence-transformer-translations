@@ -1,0 +1,12 @@
+.cache/
+
+huggingface/
+hf_cache/
+transformers_cache/
+
+output*/
+TEST_output*/
+
+embedding_dataset_cache/
+
+.idea
