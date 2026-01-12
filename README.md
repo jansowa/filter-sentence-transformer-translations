@@ -60,6 +60,21 @@ docker compose run --rm scorer \
     --subset en-pl \
     --max_length 512
 ```
+For multi-gpu (choose appropriate values for `devices` and `num_workers`):
+```bash
+docker compose run --rm scorer \
+  python rate_st_translation_multi_gpu.py \
+    --model_name google/metricx-24-hybrid-large-v2p6-bfloat16 \
+    --subset en-pl \
+    --scorer metricx_qe \
+    --devices 0,1,2,3 \
+    --num_workers 4 \
+    --test_run \
+    --test_samples 1024 \
+    --batch_size 64 \
+    --encode_batch_size 16 \
+    --queue_max_batches 16
+```
 
 ### 2) MEXMA (cosine similarity of embeddings)
 
@@ -90,6 +105,22 @@ docker compose run --rm scorer \
     --subset en-pl \
     --max_length 0
 ```
+
+For multi-gpu (choose appropriate values for `devices` and `num_workers`):
+```bash
+docker compose run --rm scorer \
+  python rate_st_translation_multi_gpu.py \
+    --model_name google/metricx-24-hybrid-xl-v2p6-bfloat16 \
+    --metricx_bf16 \
+    --encode_batch_size 8 \
+    --subset en-pl \
+    --max_length 0 \
+    --batch_size 1024 \
+    --queue_max_batches 8 \
+    --devices 0,1,2,3 \
+    --num_workers 4
+```
+
 
 ### 5) MetricX QE XXL BFP16 (reference-free, prediction 0..25, lower is better)
 Important - choose the appropriate `--encode_batch_size`:
