@@ -1,5 +1,12 @@
-````md
-# GPU Parquet Scoring (Docker Compose + NVIDIA + uv)
+```text
+___________.__.__   __              ___________                           .__          __  .__                      
+\_   _____/|__|  |_/  |_  __________\__    ___/___________    ____   _____|  | _____ _/  |_|__| ____   ____   ______
+ |    __)  |  |  |\   __\/ __ \_  __ \|    |  \_  __ \__  \  /    \ /  ___/  | \__  \\   __\  |/  _ \ /    \ /  ___/
+ |     \   |  |  |_|  | \  ___/|  | \/|    |   |  | \// __ \|   |  \\___ \|  |__/ __ \|  | |  (  <_> )   |  \\___ \ 
+ \___  /   |__|____/__|  \___  >__|   |____|   |__|  (____  /___|  /____  >____(____  /__| |__|\____/|___|  /____  >
+     \/                      \/                           \/     \/     \/          \/                    \/     \/ 
+```
+# Sentence Transformers translations filtering
 
 This project runs the script `rate_st_translation.py`, which:
 - loads parallel datasets (Hugging Face Datasets),
