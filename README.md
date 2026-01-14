@@ -127,6 +127,7 @@ docker compose run --rm scorer \
     --devices 0,1,2,3 \
     --num_workers 4
 ```
+For the best performance, select the values for parameters `batch_size` and `encode_batch_size`.
 
 
 ### 5) MetricX QE XXL BFP16 (reference-free, prediction 0..25, lower is better)
